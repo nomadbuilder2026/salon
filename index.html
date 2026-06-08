@@ -28,13 +28,13 @@
     -webkit-font-smoothing:antialiased;
   }
   .mono{font-family:'JetBrains Mono',monospace;}
-  .wrap{max-width:720px;margin:0 auto;padding:0 20px 90px;}
+  .wrap{max-width:860px;margin:0 auto;padding:0 20px 90px;}
 
   header{padding:60px 0 30px;display:flex;align-items:center;gap:26px;flex-wrap:wrap;}
   .h-text{flex:1;min-width:220px;}
-  .kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.3em;color:var(--mint);text-transform:uppercase;margin-bottom:12px;}
-  h1{font-weight:900;font-size:clamp(32px,7vw,46px);line-height:1.05;letter-spacing:-0.02em;}
-  .sub{color:var(--text-dim);font-size:13.5px;margin-top:12px;font-weight:300;}
+  .kicker{font-family:'JetBrains Mono',monospace;font-size:18px;letter-spacing:0.3em;color:var(--mint);text-transform:uppercase;margin-bottom:12px;}
+  h1{font-weight:900;font-size:clamp(39px,7vw,53px);line-height:1.05;letter-spacing:-0.02em;}
+  .sub{color:var(--text-dim);font-size:20.5px;margin-top:12px;font-weight:300;}
 
   /* Ring */
   .ring-wrap{position:relative;width:108px;height:108px;flex-shrink:0;}
@@ -42,18 +42,18 @@
   .ring-bg{stroke:var(--line);}
   .ring-fg{stroke:var(--mint);stroke-linecap:round;transition:stroke-dashoffset .6s cubic-bezier(.22,1,.36,1);}
   .ring-label{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
-  .ring-label .pct{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:24px;color:var(--mint);}
-  .ring-label .cnt{font-size:11px;color:var(--text-faint);margin-top:-2px;}
+  .ring-label .pct{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:31px;color:var(--mint);}
+  .ring-label .cnt{font-size:18px;color:var(--text-faint);margin-top:-2px;}
 
-  .reset{display:inline-block;margin-top:6px;background:none;border:1px solid var(--line);color:var(--text-dim);font-size:11px;padding:6px 12px;border-radius:8px;cursor:pointer;font-family:'JetBrains Mono',monospace;letter-spacing:.05em;transition:all .2s;}
+  .reset{display:inline-block;margin-top:6px;background:none;border:1px solid var(--line);color:var(--text-dim);font-size:18px;padding:6px 12px;border-radius:8px;cursor:pointer;font-family:'JetBrains Mono',monospace;letter-spacing:.05em;transition:all .2s;}
   .reset:hover{border-color:var(--mint-dim);color:var(--mint);}
 
   section{margin-top:40px;opacity:0;transform:translateY(14px);animation:rise .6s cubic-bezier(.22,1,.36,1) forwards;}
   @keyframes rise{to{opacity:1;transform:none;}}
   .sec-head{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
-  .sec-num{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--mint);background:var(--surface-2);border:1px solid var(--line);padding:3px 9px;border-radius:7px;}
-  .sec-head h2{font-weight:700;font-size:20px;flex:1;letter-spacing:-0.01em;}
-  .sec-meta{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-faint);}
+  .sec-num{font-family:'JetBrains Mono',monospace;font-size:19px;color:var(--mint);background:var(--surface-2);border:1px solid var(--line);padding:3px 9px;border-radius:7px;}
+  .sec-head h2{font-weight:700;font-size:27px;flex:1;letter-spacing:-0.01em;}
+  .sec-meta{font-family:'JetBrains Mono',monospace;font-size:18px;color:var(--text-faint);}
 
   .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;}
   li.item{list-style:none;display:flex;align-items:flex-start;gap:13px;padding:15px 18px;border-bottom:1px solid var(--line);cursor:pointer;transition:background .18s;}
@@ -65,40 +65,40 @@
   li.item.done .box{background:var(--mint);border-color:var(--mint);}
   li.item.done .box svg{opacity:1;transform:scale(1);}
   .it-body{flex:1;}
-  .it-title{font-size:15px;font-weight:500;transition:color .2s;}
+  .it-title{font-size:22px;font-weight:500;transition:color .2s;}
   li.item.done .it-title{color:var(--text-faint);text-decoration:line-through;}
-  .it-note{font-size:12px;color:var(--text-dim);font-weight:300;margin-top:3px;}
-  .cost{flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--text);white-space:nowrap;margin-top:1px;}
-  .tag{display:inline-block;font-size:10px;letter-spacing:.04em;padding:1px 7px;border-radius:99px;margin-left:6px;vertical-align:1.5px;font-weight:500;font-family:'JetBrains Mono',monospace;}
+  .it-note{font-size:19px;color:var(--text-dim);font-weight:300;margin-top:3px;}
+  .cost{flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:500;color:var(--text);white-space:nowrap;margin-top:1px;}
+  .tag{display:inline-block;font-size:17px;letter-spacing:.04em;padding:1px 7px;border-radius:99px;margin-left:6px;vertical-align:1.5px;font-weight:500;font-family:'JetBrains Mono',monospace;}
   .tag.req{background:rgba(94,234,212,.12);color:var(--mint);}
   .tag.opt{background:rgba(242,193,78,.12);color:var(--amber);}
 
   .summary{margin-top:14px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--mint-dim);border-radius:14px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;}
-  .summary .s-label{font-size:12.5px;color:var(--text-dim);}
-  .summary .s-val{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;color:var(--mint);}
-  .callout{margin-top:12px;font-size:12.5px;color:var(--text-dim);background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--amber);padding:12px 15px;border-radius:0 10px 10px 0;font-weight:300;}
+  .summary .s-label{font-size:19.5px;color:var(--text-dim);}
+  .summary .s-val{font-family:'JetBrains Mono',monospace;font-size:27px;font-weight:700;color:var(--mint);}
+  .callout{margin-top:12px;font-size:19.5px;color:var(--text-dim);background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--amber);padding:12px 15px;border-radius:0 10px 10px 0;font-weight:300;}
 
   .funds{display:grid;gap:12px;}
   .fund{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;}
   .fund.primary{border-color:var(--mint-dim);}
   .fund-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:12px;}
-  .fund h3{font-size:16px;font-weight:700;letter-spacing:-0.01em;}
-  .pill{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.04em;padding:3px 9px;border-radius:99px;font-weight:500;white-space:nowrap;}
+  .fund h3{font-size:23px;font-weight:700;letter-spacing:-0.01em;}
+  .pill{font-family:'JetBrains Mono',monospace;font-size:17px;letter-spacing:.04em;padding:3px 9px;border-radius:99px;font-weight:500;white-space:nowrap;}
   .pill.best{background:var(--mint);color:var(--bg);}
   .pill.year{background:rgba(242,193,78,.14);color:var(--amber);}
   .fund-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:10px 16px;}
-  .f-cell .l{font-size:10.5px;color:var(--text-faint);font-family:'JetBrains Mono',monospace;letter-spacing:.03em;}
-  .f-cell .v{font-size:13.5px;font-weight:500;margin-top:2px;}
+  .f-cell .l{font-size:17.5px;color:var(--text-faint);font-family:'JetBrains Mono',monospace;letter-spacing:.03em;}
+  .f-cell .v{font-size:20.5px;font-weight:500;margin-top:2px;}
 
   .tl{position:relative;padding-left:22px;}
   .tl:before{content:'';position:absolute;left:4px;top:8px;bottom:8px;width:1.5px;background:var(--line);}
   .tl-row{position:relative;padding:11px 0;}
   .tl-row:before{content:'';position:absolute;left:-22px;top:16px;width:9px;height:9px;border-radius:50%;background:var(--bg);border:2px solid var(--mint);}
-  .tl-when{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--mint);}
-  .tl-what{font-size:14px;margin-top:1px;}
-  .tl-what small{display:block;color:var(--text-dim);font-size:11.5px;font-weight:300;margin-top:1px;}
+  .tl-when{font-family:'JetBrains Mono',monospace;font-size:19px;color:var(--mint);}
+  .tl-what{font-size:21px;margin-top:1px;}
+  .tl-what small{display:block;color:var(--text-dim);font-size:18.5px;font-weight:300;margin-top:1px;}
 
-  footer{margin-top:50px;padding-top:22px;border-top:1px solid var(--line);font-size:12px;color:var(--text-faint);font-weight:300;line-height:1.8;}
+  footer{margin-top:50px;padding-top:22px;border-top:1px solid var(--line);font-size:19px;color:var(--text-faint);font-weight:300;line-height:1.8;}
   footer b{color:var(--text-dim);font-weight:500;}
 </style>
 </head>
@@ -122,9 +122,9 @@
   </header>
 
   <section style="animation-delay:.05s">
-    <div class="sec-head"><span class="sec-num">01</span><h2>자격 · 면허</h2><span class="sec-meta">~7월 초</span></div>
+    <div class="sec-head"><span class="sec-num">01</span><h2>자격 · 면허</h2></div>
     <ul class="card" data-sec>
-      <li class="item"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><div class="it-body"><div class="it-title">미용사(일반) 시험 합격 — 6/15</div><div class="it-note">필기/실기 확인 · 실기까지 합격해야 자격증</div></div></li>
+      <li class="item"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><div class="it-body"><div class="it-title">미용사(일반) 시험 합격</div><div class="it-note">필기/실기 확인 · 실기까지 합격해야 자격증</div></div></li>
       <li class="item"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><div class="it-body"><div class="it-title">자격증 발급 (큐넷)</div><div class="it-note">합격 발표일은 큐넷 본인 회차 확인 · 1644-8000</div></div></li>
       <li class="item"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><div class="it-body"><div class="it-title">면허증 발급 (원주시청 위생과)</div><div class="it-note">자격증·의사 진단서(6개월 이내)·사진 2매·5,500원, 당일</div></div></li>
     </ul>
@@ -147,7 +147,7 @@
   </section>
 
   <section style="animation-delay:.15s">
-    <div class="sec-head"><span class="sec-num">03</span><h2>신고 · 등록</h2><span class="sec-meta">~7월 말</span></div>
+    <div class="sec-head"><span class="sec-num">03</span><h2>신고 · 등록</h2></div>
     <ul class="card" data-sec>
       <li class="item"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><div class="it-body"><div class="it-title">미용업 영업신고 (보건소)</div><div class="it-note">면허증 + 위생교육 수료증 + 시설 · 1~3일</div></div></li>
       <li class="item"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><div class="it-body"><div class="it-title">사업자등록 (홈택스 / 세무서)</div><div class="it-note">영업신고증 첨부 · 2~3일이면 발급</div></div></li>
@@ -190,18 +190,18 @@
   </section>
 
   <section style="animation-delay:.25s">
-    <div class="sec-head"><span class="sec-num">05</span><h2>예상 일정</h2><span class="sec-meta">6/15 합격 기준</span></div>
+    <div class="sec-head"><span class="sec-num">05</span><h2>진행 순서</h2></div>
     <div class="tl">
-      <div class="tl-row"><div class="tl-when">6월 말</div><div class="tl-what">합격 발표 + 자격증 발급<small>발표일은 큐넷 회차별 고정 — 직접 확인</small></div></div>
-      <div class="tl-row"><div class="tl-when">7월 초</div><div class="tl-what">면허 발급 → 상가·위생교육·시설 (병행)</div></div>
-      <div class="tl-row"><div class="tl-when">7월 말</div><div class="tl-what">영업신고 → 사업자등록 완료<small>시설 진행 속도에 따라 ±2주</small></div></div>
-      <div class="tl-row"><div class="tl-when">8월 중~9월 초</div><div class="tl-what">대출 신청 → 심사 → 자금 입금</div></div>
+      <div class="tl-row"><div class="tl-when">STEP 1</div><div class="tl-what">합격 발표 + 자격증 발급</div></div>
+      <div class="tl-row"><div class="tl-when">STEP 2</div><div class="tl-what">면허 발급 → 상가·위생교육·시설 (병행)</div></div>
+      <div class="tl-row"><div class="tl-when">STEP 3</div><div class="tl-what">영업신고 → 사업자등록 완료</div></div>
+      <div class="tl-row"><div class="tl-when">STEP 4</div><div class="tl-what">대출 신청 → 심사 → 자금 입금</div></div>
     </div>
   </section>
 
   <footer>
     <b>문의</b> · 원주시청 기업지원과 · 강원신용보증재단 원주지점 · 소진공 1533-0100 · 큐넷 1644-8000<br>
-    합격 발표 시점·자금 개시일·한도는 추정이며 변동될 수 있습니다. 신청 전 각 기관 최신 공고로 확인하세요. 기준 2026.06.
+    자금 개시일·한도는 변동될 수 있으니 신청 전 각 기관 최신 공고로 확인하세요.
   </footer>
 
 </div>
