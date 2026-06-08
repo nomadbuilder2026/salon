@@ -23,6 +23,7 @@
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
   body{
+    counter-reset:step;
     background:var(--bg);color:var(--text);
     font-family:'Gothic A1',sans-serif;font-weight:400;line-height:1.65;
     -webkit-font-smoothing:antialiased;
@@ -56,7 +57,7 @@
   .sec-meta{font-family:'JetBrains Mono',monospace;font-size:18px;color:var(--text-faint);}
 
   .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;}
-  li.item{list-style:none;display:flex;align-items:flex-start;gap:13px;padding:15px 18px;border-bottom:1px solid var(--line);cursor:pointer;transition:background .18s;}
+  li.item{counter-increment:step;list-style:none;display:flex;align-items:flex-start;gap:13px;padding:15px 18px;border-bottom:1px solid var(--line);cursor:pointer;transition:background .18s;}
   ul{list-style:none;}
   li.item:hover{background:var(--surface-2);}
   li.item:last-child{border-bottom:none;}
@@ -66,6 +67,8 @@
   li.item.done .box svg{opacity:1;transform:scale(1);}
   .it-body{flex:1;}
   .it-title{font-size:22px;font-weight:500;transition:color .2s;}
+  .it-title::before{content:counter(step,decimal-leading-zero);font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;color:var(--mint);margin-right:9px;vertical-align:1px;}
+  li.item.done .it-title::before{color:var(--text-faint);}
   li.item.done .it-title{color:var(--text-faint);text-decoration:line-through;}
   .it-note{font-size:19px;color:var(--text-dim);font-weight:300;margin-top:3px;}
   .cost{flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:500;color:var(--text);white-space:nowrap;margin-top:1px;}
