@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>미용실 창업 체크리스트 · 원주</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0C0E10;
+    --surface:#15181C;
+    --surface-2:#1C2025;
+    --line:#272C32;
+    --text:#E8EAED;
+    --text-dim:#8A929C;
+    --text-faint:#5A626C;
+    --mint:#5EEAD4;
+    --mint-dim:#2C7D72;
+    --amber:#F2C14E;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);color:var(--text);
+    font-family:'Gothic A1',sans-serif;font-weight:400;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .mono{font-family:'JetBrains Mono',monospace;}
+  .wrap{max-width:720px;margin:0 auto;padding:0 20px 90px;}
+
+  header{padding:60px 0 30px;display:flex;align-items:center;gap:26px;flex-wrap:wrap;}
+  .h-text{flex:1;min-width:220px;}
+  .kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.3em;color:var(--mint);text-transform:uppercase;margin-bottom:12px;}
+  h1{font-weight:900;font-size:clamp(32px,7vw,46px);line-height:1.05;letter-spacing:-0.02em;}
+  .sub{color:var(--text-dim);font-size:13.5px;margin-top:12px;font-weight:300;}
+
+  /* Ring */
+  .ring-wrap{position:relative;width:108px;height:108px;flex-shrink:0;}
+  .ring-wrap svg{transform:rotate(-90deg);}
+  .ring-bg{stroke:var(--line);}
+  .ring-fg{stroke:var(--mint);stroke-linecap:round;transition:stroke-dashoffset .6s cubic-bezier(.22,1,.36,1);}
+  .ring-label{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  .ring-label .pct{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:24px;color:var(--mint);}
+  .ring-label .cnt{font-size:11px;color:var(--text-faint);margin-top:-2px;}
+
+  .reset{display:inline-block;margin-top:6px;background:none;border:1px solid var(--line);color:var(--text-dim);font-size:11px;padding:6px 12px;border-radius:8px;cursor:pointer;font-family:'JetBrains Mono',monospace;letter-spacing:.05em;transition:all .2s;}
+  .reset:hover{border-color:var(--mint-dim);color:var(--mint);}
+
+  section{margin-top:40px;opacity:0;transform:translateY(14px);animation:rise .6s cubic-bezier(.22,1,.36,1) forwards;}
+  @keyframes rise{to{opacity:1;transform:none;}}
+  .sec-head{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  .sec-num{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--mint);background:var(--surface-2);border:1px solid var(--line);padding:3px 9px;border-radius:7px;}
+  .sec-head h2{font-weight:700;font-size:20px;flex:1;letter-spacing:-0.01em;}
+  .sec-meta{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-faint);}
+
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;}
+  li.item{list-style:none;display:flex;align-items:flex-start;gap:13px;padding:15px 18px;border-bottom:1px solid var(--line);cursor:pointer;transition:background .18s;}
+  ul{list-style:none;}
+  li.item:hover{background:var(--surface-2);}
+  li.item:last-child{border-bottom:none;}
+  .box{flex-shrink:0;width:21px;height:21px;border:1.6px solid var(--text-faint);border-radius:6px;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+  .box svg{width:12px;height:12px;stroke:var(--bg);stroke-width:3.2;fill:none;opacity:0;transform:scale(.4);transition:all .2s;}
+  li.item.done .box{background:var(--mint);border-color:var(--mint);}
+  li.item.done .box svg{opacity:1;transform:scale(1);}
+  .it-body{flex:1;}
+  .it-title{font-size:15px;font-weight:500;transition:color .2s;}
+  li.item.done .it-title{color:var(--text-faint);text-decoration:line-through;}
+  .it-note{font-size:12px;color:var(--text-dim);font-weight:300;margin-top:3px;}
+  .cost{flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--text);white-space:nowrap;margin-top:1px;}
+  .tag{display:inline-block;font-size:10px;letter-spacing:.04em;padding:1px 7px;border-radius:99px;margin-left:6px;vertical-align:1.5px;font-weight:500;font-family:'JetBrains Mono',monospace;}
+  .tag.req{background:rgba(94,234,212,.12);color:var(--mint);}
+  .tag.opt{background:rgba(242,193,78,.12);color:var(--amber);}
+
+  .summary{margin-top:14px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid var(--mint-dim);border-radius:14px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;}
+  .summary .s-label{font-size:12.5px;color:var(--text-dim);}
+  .summary .s-val{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;color:var(--mint);}
+  .callout{margin-top:12px;font-size:12.5px;color:var(--text-dim);background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--amber);padding:12px 15px;border-radius:0 10px 10px 0;font-weight:300;}
+
+  .funds{display:grid;gap:12px;}
+  .fund{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;}
+  .fund.primary{border-color:var(--mint-dim);}
+  .fund-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:12px;}
+  .fund h3{font-size:16px;font-weight:700;letter-spacing:-0.01em;}
+  .pill{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.04em;padding:3px 9px;border-radius:99px;font-weight:500;white-space:nowrap;}
+  .pill.best{background:var(--mint);color:var(--bg);}
+  .pill.year{background:rgba(242,193,78,.14);color:var(--amber);}
+  .fund-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:10px 16px;}
+  .f-cell .l{font-size:10.5px;color:var(--text-faint);font-family:'JetBrains Mono',monospace;letter-spacing:.03em;}
+  .f-cell .v{font-size:13.5px;font-weight:500;margin-top:2px;}
+
+  .tl{position:relative;padding-left:22px;}
+  .tl:before{content:'';position:absolute;left:4px;top:8px;bottom:8px;width:1.5px;background:var(--line);}
+  .tl-row{position:relative;padding:11px 0;}
+  .tl-row:before{content:'';position:absolute;left:-22px;top:16px;width:9px;height:9px;border-radius:50%;background:var(--bg);border:2px solid var(--mint);}
+  .tl-when{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--mint);}
+  .tl-what{font-size:14px;margin-top:1px;}
+  .tl-what small{display:block;color:var(--text-dim);font-size:11.5px;font-weight:300;margin-top:1px;}
+
+  footer{margin-top:50px;padding-top:22px;border-top:1px solid var(--line);font-size:12px;color:var(--text-faint);font-weight:300;line-height:1.8;}
+  footer b{color:var(--text-dim);font-weight:500;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="h-text">
+      <div class="kicker">Wonju / Salon Startup</div>
+      <h1>창업 준비<br>체크리스트</h1>
+      <p class="sub">자격 → 시설 → 신고 → 대출 · 진행상황 자동 저장</p>
+      <button class="reset" id="reset">RESET</button>
+    </div>
+    <div class="ring-wrap">
+      <svg width="108" height="108" viewBox="0 0 108 108">
+        <circle class="ring-bg" cx="54" cy="54" r="48" fill="none" stroke-width="8"/>
+        <circle class="ring-fg" id="ring" cx="54" cy="54" r="48" fill="none" stroke-width="8" stroke-dasharray="301.6" stroke-dashoffset="301.6"/>
+      </svg>
+      <div class="ring-label"><span class="pct" id="pct">0%</span><span class="cnt" id="cnt">0 / 0</span></div>
+    </div>
+  </header>
+
+  <section style="animation-delay:.05s">
+    <div class="sec-head"><span class="sec-num">01</span><h2>자격 · 면허</h2><span class="sec-meta">~7월 초</span></div>
+    <ul class="card" data-sec>
+      <li class="item"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><div class="it-body"><div class="it-title">미용사(일반) 시험 합격 — 6/15</div><div class="it-note">필기/실기 확인 · 실기까지 합격해야 자격증</div></div></li>
+      <li class="item"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><div class="it-body"><div class="it-title">자격증 발급 (큐넷)</div><div class="it-note">합격 발표일은 큐넷 본인 회차 확인 · 1644-8000</div></div></li>
+      <li class="item"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><div class="it-body"><div class="it-title">면허증 발급 (원주시청 위생과)</div><div class="it-note">자격증·의사 진단서(6개월 이내)·사진 2매·5,500원, 당일</div></div></li>
+    </ul>
+  </section>
+
+  <section style="animation-delay:.1s">
+    <div class="sec-head"><span class="sec-num">02</span><h2>점포 · 시설</h2><span class="sec-meta">비용 발생</span></div>
+    <ul class="card" data-sec>
+      <li class="item"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><div class="it-body"><div class="it-title">상가 계약</div><div class="it-note">제1종 근린생활시설·미용업 가능 확인 후 계약</div></div></li>
+      <li class="item"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><div class="it-body"><div class="it-title">위생교육 이수 (대한미용사회)</div><div class="it-note">영업신고 전 수료증 필요</div></div></li>
+      <li class="item"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><div class="it-body"><div class="it-title">소독기 · 자외선살균기<span class="tag req">필수</span></div></div><div class="cost">5~20만</div></li>
+      <li class="item"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><div class="it-body"><div class="it-title">기구 구분 보관 용기<span class="tag req">필수</span></div></div><div class="cost">2~5만</div></li>
+      <li class="item"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><div class="it-body"><div class="it-title">미용의자 1대</div></div><div class="cost">15~40만</div></li>
+      <li class="item"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><div class="it-body"><div class="it-title">샴푸대 1대</div><div class="it-note">급배수 배관 필요 · 없으면 공사 추가</div></div><div class="cost">38~48만</div></li>
+      <li class="item"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><div class="it-body"><div class="it-title">경대 · 거울</div></div><div class="cost">20~50만</div></li>
+      <li class="item"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><div class="it-body"><div class="it-title">기본 도구 (가위·드라이·빗·고데기)</div></div><div class="cost">20~50만</div></li>
+    </ul>
+    <div class="summary"><span class="s-label">최소 시설비 합계 (신품)</span><span class="s-val">약 100~210만원</span></div>
+    <div class="callout">기존 미용실 자리를 잡으면 배관·인테리어 공사가 거의 안 들어 비용이 크게 줄어듭니다. 정확한 실사 기준은 원주 보건소 확인.</div>
+  </section>
+
+  <section style="animation-delay:.15s">
+    <div class="sec-head"><span class="sec-num">03</span><h2>신고 · 등록</h2><span class="sec-meta">~7월 말</span></div>
+    <ul class="card" data-sec>
+      <li class="item"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><div class="it-body"><div class="it-title">미용업 영업신고 (보건소)</div><div class="it-note">면허증 + 위생교육 수료증 + 시설 · 1~3일</div></div></li>
+      <li class="item"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><div class="it-body"><div class="it-title">사업자등록 (홈택스 / 세무서)</div><div class="it-note">영업신고증 첨부 · 2~3일이면 발급</div></div></li>
+    </ul>
+  </section>
+
+  <section style="animation-delay:.2s">
+    <div class="sec-head"><span class="sec-num">04</span><h2>대출 신청</h2><span class="sec-meta">사업자등록 후</span></div>
+    <div class="funds">
+      <div class="fund primary">
+        <div class="fund-top"><h3>소진공 일반경영안정자금</h3><span class="pill best">가장 확실</span></div>
+        <div class="fund-grid">
+          <div class="f-cell"><div class="l">한도</div><div class="v">연 7,000만</div></div>
+          <div class="f-cell"><div class="l">금리</div><div class="v">약 4% (비수도권↓)</div></div>
+          <div class="f-cell"><div class="l">기간</div><div class="v">5년 (거치 2)</div></div>
+          <div class="f-cell"><div class="l">조건</div><div class="v">업력·신용 무관 · 연중</div></div>
+        </div>
+      </div>
+      <div class="fund">
+        <div class="fund-top"><h3>강원도 소상공인 경영안정자금</h3><span class="pill year">7월 개시</span></div>
+        <div class="fund-grid">
+          <div class="f-cell"><div class="l">한도</div><div class="v">최대 5,000만</div></div>
+          <div class="f-cell"><div class="l">금리</div><div class="v">~4.8% (2년 이자 지원)</div></div>
+          <div class="f-cell"><div class="l">우대</div><div class="v">영세 0.5% · 카뱅 신용무관</div></div>
+          <div class="f-cell"><div class="l">주의</div><div class="v">500억 선착순</div></div>
+        </div>
+      </div>
+      <div class="fund">
+        <div class="fund-top"><h3>강원신용보증재단 보증</h3></div>
+        <div class="fund-grid">
+          <div class="f-cell"><div class="l">용도</div><div class="v">담보·신용 부족 보강</div></div>
+          <div class="f-cell"><div class="l">방식</div><div class="v">보증서 → 은행 대출</div></div>
+          <div class="f-cell"><div class="l">신청</div><div class="v">원주지점 · 보증드림</div></div>
+        </div>
+      </div>
+    </div>
+    <ul class="card" data-sec style="margin-top:12px">
+      <li class="item"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><div class="it-body"><div class="it-title">자금 신청 완료</div><div class="it-note">실행까지 2~4주 · 무매출 신생은 한도 축소 가능</div></div></li>
+    </ul>
+  </section>
+
+  <section style="animation-delay:.25s">
+    <div class="sec-head"><span class="sec-num">05</span><h2>예상 일정</h2><span class="sec-meta">6/15 합격 기준</span></div>
+    <div class="tl">
+      <div class="tl-row"><div class="tl-when">6월 말</div><div class="tl-what">합격 발표 + 자격증 발급<small>발표일은 큐넷 회차별 고정 — 직접 확인</small></div></div>
+      <div class="tl-row"><div class="tl-when">7월 초</div><div class="tl-what">면허 발급 → 상가·위생교육·시설 (병행)</div></div>
+      <div class="tl-row"><div class="tl-when">7월 말</div><div class="tl-what">영업신고 → 사업자등록 완료<small>시설 진행 속도에 따라 ±2주</small></div></div>
+      <div class="tl-row"><div class="tl-when">8월 중~9월 초</div><div class="tl-what">대출 신청 → 심사 → 자금 입금</div></div>
+    </div>
+  </section>
+
+  <footer>
+    <b>문의</b> · 원주시청 기업지원과 · 강원신용보증재단 원주지점 · 소진공 1533-0100 · 큐넷 1644-8000<br>
+    합격 발표 시점·자금 개시일·한도는 추정이며 변동될 수 있습니다. 신청 전 각 기관 최신 공고로 확인하세요. 기준 2026.06.
+  </footer>
+
+</div>
+
+<script>
+  var KEY='salon-checklist-v2';
+  var items=[].slice.call(document.querySelectorAll('li.item'));
+  var total=items.length, CIRC=301.6;
+  var ring=document.getElementById('ring');
+
+  var saved={};
+  try{saved=JSON.parse(localStorage.getItem(KEY))||{};}catch(e){saved={};}
+
+  function update(){
+    var done=items.filter(function(it){return it.classList.contains('done');}).length;
+    var ratio=total?done/total:0;
+    document.getElementById('pct').textContent=Math.round(ratio*100)+'%';
+    document.getElementById('cnt').textContent=done+' / '+total;
+    ring.style.strokeDashoffset=(CIRC*(1-ratio)).toFixed(1);
+  }
+  function save(){
+    var s={};
+    items.forEach(function(it,i){if(it.classList.contains('done'))s[i]=1;});
+    try{localStorage.setItem(KEY,JSON.stringify(s));}catch(e){}
+  }
+  items.forEach(function(it,i){
+    if(saved[i])it.classList.add('done');
+    it.addEventListener('click',function(){it.classList.toggle('done');save();update();});
+  });
+  update();
+  document.getElementById('reset').addEventListener('click',function(){
+    items.forEach(function(it){it.classList.remove('done');});
+    try{localStorage.removeItem(KEY);}catch(e){}
+    update();
+  });
+</script>
+</body>
+</html>
