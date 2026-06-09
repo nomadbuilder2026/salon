@@ -101,6 +101,19 @@
   .tl-what{font-size:21px;margin-top:1px;}
   .tl-what small{display:block;color:var(--text-dim);font-size:18.5px;font-weight:300;margin-top:1px;}
 
+  .goal{background:linear-gradient(135deg,var(--surface-2),var(--surface));border:1px solid var(--mint-dim);border-radius:16px;padding:22px 24px;margin-top:26px;}
+  .goal .g-row{display:flex;gap:12px;align-items:flex-start;}
+  .goal .g-row+.g-row{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);}
+  .goal .g-key{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--mint);background:rgba(94,234,212,.1);padding:4px 11px;border-radius:8px;white-space:nowrap;flex-shrink:0;margin-top:1px;}
+  .goal .g-val{color:var(--text-dim);font-size:17px;line-height:1.55;}
+  .goal .g-val b{color:var(--text);font-weight:700;}
+  .goal .g-flow{margin-top:16px;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--text-faint);letter-spacing:.02em;}
+  .it-note.warn{color:var(--amber);}
+  .notes{background:var(--surface);border:1px solid var(--line);border-radius:16px;}
+  .note-item{display:flex;gap:13px;padding:15px 18px;border-bottom:1px solid var(--line);font-size:16px;line-height:1.6;color:var(--text-dim);}
+  .note-item:last-child{border-bottom:none;}
+  .note-item .ni{color:var(--amber);flex-shrink:0;font-weight:700;}
+  .note-item b{color:var(--text);font-weight:700;}
   footer{margin-top:50px;padding-top:22px;border-top:1px solid var(--line);font-size:19px;color:var(--text-faint);font-weight:300;line-height:1.8;}
   footer b{color:var(--text-dim);font-weight:500;}
 </style>
@@ -112,7 +125,7 @@
     <div class="h-text">
       <div class="kicker">Wonju / Salon Startup</div>
       <h1>창업 준비<br>체크리스트</h1>
-      <p class="sub">자격 → 시설 → 신고 → 대출 · 진행상황 자동 저장</p>
+      <p class="sub">위에서부터 순서대로 체크 · 진행상황 자동 저장</p>
       <button class="reset" id="reset">RESET</button>
     </div>
     <div class="ring-wrap">
@@ -123,6 +136,12 @@
       <div class="ring-label"><span class="pct" id="pct">0%</span><span class="cnt" id="cnt">0 / 0</span></div>
     </div>
   </header>
+
+  <div class="goal">
+    <div class="g-row"><span class="g-key">최종 목표</span><span class="g-val"><b>미용실 창업</b></span></div>
+    <div class="g-row"><span class="g-key">지금 목표</span><span class="g-val"><b>최소 비용</b>으로 <b>사업자등록</b>을 만들고 <b>대출 신청</b>까지 완료하기</span></div>
+    <div class="g-flow">면허 → 영업신고 → 사업자등록 → 대출  ·  이 순서는 절대 안 바뀜</div>
+  </div>
 
   <section style="animation-delay:.05s">
     <div class="sec-head"><span class="sec-num">01</span><h2>자격 · 면허</h2></div>
@@ -136,7 +155,7 @@
   <section style="animation-delay:.1s">
     <div class="sec-head"><span class="sec-num">02</span><h2>점포 · 시설</h2><span class="sec-meta">비용 발생</span></div>
     <ul class="card" data-sec>
-      <li class="item"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><div class="it-body"><div class="it-title">상가 계약</div><div class="it-note">제1종 근린생활시설·미용업 가능 확인 후 계약</div></div></li>
+      <li class="item"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><div class="it-body"><div class="it-title">상가 계약</div><div class="it-note warn">⚠ 계약 전 '제1종 근린생활시설(미용업 가능)' 용도 확인 — 아니면 영업신고가 막힘</div></div></li>
       <li class="item"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><div class="it-body"><div class="it-title">위생교육 이수 (대한미용사회)</div><div class="it-note">영업신고 전 수료증 필요</div></div></li>
       <li class="item"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><div class="it-body"><div class="it-title">소독기 · 자외선살균기<span class="tag req">필수</span></div></div><div class="cost">5~20만</div></li>
       <li class="item"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><div class="it-body"><div class="it-title">기구 구분 보관 용기<span class="tag req">필수</span></div></div><div class="cost">2~5만</div></li>
@@ -146,7 +165,7 @@
       <li class="item"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><div class="it-body"><div class="it-title">기본 도구 (가위·드라이·빗·고데기)</div></div><div class="cost">20~50만</div></li>
     </ul>
     <div class="summary"><span class="s-label">최소 시설비 합계 (신품)</span><span class="s-val">약 100~210만원</span></div>
-    <div class="callout">기존 미용실 자리를 잡으면 배관·인테리어 공사가 거의 안 들어 비용이 크게 줄어듭니다. 정확한 실사 기준은 원주 보건소 확인.</div>
+    <div class="callout"><b style="color:var(--text)">비용 최소화</b> — ① 기존 미용실 자리를 잡으면 배관·인테리어가 거의 안 듦 ② 시설은 중고로 더 절감 ③ 인테리어 없이 '영업신고 통과 최소 시설'만 갖춤. 정확한 실사 기준은 원주 보건소에 미리 확인.</div>
   </section>
 
   <section style="animation-delay:.15s">
@@ -193,12 +212,13 @@
   </section>
 
   <section style="animation-delay:.25s">
-    <div class="sec-head"><span class="sec-num">05</span><h2>진행 순서</h2></div>
-    <div class="tl">
-      <div class="tl-row"><div class="tl-when">STEP 1</div><div class="tl-what">합격 발표 + 자격증 발급</div></div>
-      <div class="tl-row"><div class="tl-when">STEP 2</div><div class="tl-what">면허 발급 → 상가·위생교육·시설 (병행)</div></div>
-      <div class="tl-row"><div class="tl-when">STEP 3</div><div class="tl-what">영업신고 → 사업자등록 완료</div></div>
-      <div class="tl-row"><div class="tl-when">STEP 4</div><div class="tl-what">대출 신청 → 심사 → 자금 입금</div></div>
+    <div class="sec-head"><span class="sec-num">05</span><h2>꼭 기억할 것</h2></div>
+    <div class="notes">
+      <div class="note-item"><span class="ni">&#9656;</span><div><b>순서 고정</b> &mdash; 면허 &rarr; 영업신고 &rarr; 사업자등록 &rarr; 대출. 앞 단계 없이는 다음 단계로 못 감.</div></div>
+      <div class="note-item"><span class="ni">&#9656;</span><div><b>상가 용도 확인</b> &mdash; 계약 전 미용업 가능한 건물(제1종 근린생활시설)인지 반드시 확인. 놓치면 영업신고가 막힘.</div></div>
+      <div class="note-item"><span class="ni">&#9656;</span><div><b>보건소 기준 확인</b> &mdash; 시설 실사 기준이 보건소마다 조금씩 다름. 계약&middot;구매 전 원주 보건소에 시설 목록 확인.</div></div>
+      <div class="note-item"><span class="ni">&#9656;</span><div><b>대출은 자격 &ne; 승인</b> &mdash; 신청 자격이 돼도 무매출 신생이면 한도가 줄거나 거절될 수 있음.</div></div>
+      <div class="note-item"><span class="ni">&#9656;</span><div><b>미리 준비</b> &mdash; 면허 기다리는 동안 상가&middot;위생교육&middot;시설을 미리 진행해두면 전체 기간이 줄어듦.</div></div>
     </div>
   </section>
 
